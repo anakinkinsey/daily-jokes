@@ -10,6 +10,7 @@ variable "jokes_table_name" {
 
 variable "lambda_zip_path" {
   description = "Path to the Lambda deployment package zip"
+  default     = "../infra/function.zip"
   type        = string
 }
 

@@ -27,6 +27,13 @@ jobs:
           role-session-name: GitHubActionsSession
           audience: sts.amazonaws.com
 
+      - name: Build Lambda
+        run: |
+          cd lambda
+          GOOS=linux GOARCH=amd64 go build -o main main.go
+          zip function.zip main
+          mv function.zip ../infra/
+
       - name: Terraform Init
         run: terraform init
         working-directory: infra

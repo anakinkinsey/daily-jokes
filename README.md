@@ -1,3 +1,7 @@
+# ⚠️ DISCLAIMER: AI-GENERATED CODE ⚠️
+
+**This entire repository was written by GitHub Copilot (AI).**
+
 # daily-jokes
 
 A serverless app that emails you a random joke every day using AWS Lambda (Go), DynamoDB, SES, and Terraform.

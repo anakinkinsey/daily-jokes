@@ -100,7 +100,7 @@ resource "aws_lambda_permission" "allow_eventbridge" {
 
 terraform {
   backend "s3" {
-    bucket = "ak-terraform-statefiles"
+    bucket = "ak-terraform-state-files"
     key    = "daily-jokes/terraform.tfstate"
     region = "us-east-1"
   }

@@ -66,7 +66,7 @@ resource "aws_lambda_function" "joke_emailer" {
   function_name    = "joke_emailer_lambda"
   role             = aws_iam_role.lambda_exec.arn
   handler          = "main"
-  runtime          = "go1.x"
+  runtime          = "provided.al2"
   source_code_hash = filebase64sha256(var.lambda_zip_path)
 
   environment {

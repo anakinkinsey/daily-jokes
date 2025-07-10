@@ -31,8 +31,8 @@ jobs:
         run: |
           cd lambda
           go mod tidy
-          GOOS=linux GOARCH=amd64 go build -o main main.go
-          zip function.zip main
+          GOOS=linux GOARCH=amd64 go build -o bootstrap main.go
+          zip function.zip bootstrap
           mv function.zip ../infra/
 
       - name: Terraform Init

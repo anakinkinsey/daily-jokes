@@ -30,6 +30,7 @@ jobs:
       - name: Build Lambda
         run: |
           cd lambda
+          go mod tidy
           GOOS=linux GOARCH=amd64 go build -o main main.go
           zip function.zip main
           mv function.zip ../infra/

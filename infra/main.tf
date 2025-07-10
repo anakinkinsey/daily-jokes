@@ -74,7 +74,6 @@ resource "aws_lambda_function" "joke_emailer" {
       JOKES_TABLE = aws_dynamodb_table.jokes.name
       EMAIL_TO    = var.email_to
       EMAIL_FROM  = var.email_from
-      AWS_REGION  = var.aws_region
     }
   }
 }

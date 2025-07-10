@@ -97,3 +97,11 @@ resource "aws_lambda_permission" "allow_eventbridge" {
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.every_day.arn
 }
+
+terraform {
+  backend "s3" {
+    bucket = "ak-terraform-statefiles"
+    key    = "daily-jokes/terraform.tfstate"
+    region = var.aws_region
+  }
+}

@@ -29,12 +29,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: infra
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: infra
 
       - name: Terraform Apply
         run: terraform apply -auto-approve -var="email_to=${EMAIL_TO}" -var="email_from=${EMAIL_FROM}"
+        working-directory: infra
         env:
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
